@@ -1,2 +1,2 @@
 # Ad Gen Labs landing page
-Static site. Put clips in /videos and register them in the CLIPS array in index.html. Replace TESTIMONIALS with real quotes. Deploy on Vercel (framework: Other).
+Static site. Clips live in /videos (posters in /posters) and are listed in the CLIPS array in index.html. Deploy on Vercel (framework: Other).

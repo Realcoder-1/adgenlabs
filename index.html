@@ -32,8 +32,8 @@ nav .btn{padding:10px 18px;font-size:.95rem}
 .phone video{width:100%;height:100%;object-fit:cover;display:block}
 .work{background:var(--ink);color:#fff}
 .work .lead{color:#AEB6C6}
-.reel{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:40px}
-.clip{aspect-ratio:9/16;border-radius:14px;overflow:hidden;position:relative;background:#1B2232}
+.reel{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 24px 20px;margin:40px -24px 0}
+.clip{flex:0 0 220px;scroll-snap-align:start;aspect-ratio:9/16;border-radius:14px;overflow:hidden;position:relative;background:#1B2232}
 .clip video{width:100%;height:100%;object-fit:cover;display:block}
 .clip span{position:absolute;left:12px;bottom:12px;background:rgba(15,20,32,.75);padding:4px 10px;border-radius:99px;font-size:.8rem}
 .work .cta-row{margin-top:40px}
@@ -54,17 +54,12 @@ th{font:700 1rem 'Bricolage Grotesque'}th.us,td.us{background:#EEF0FF}
 td:first-child{font-weight:600}
 .not{margin-top:40px;border-left:4px solid var(--warn);padding:4px 0 4px 24px;max-width:70ch}
 .not ul{margin-top:12px;padding-left:20px;color:var(--mute)}.not li{margin:6px 0}
-.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
-.t{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:20px}
-.t blockquote{font-size:1.05rem}
-.t footer{display:flex;gap:12px;align-items:center;margin-top:auto}
-.av{width:44px;height:44px;border-radius:50%;background:var(--line)}
-.t small{display:block;color:var(--mute)}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}.nums .big{margin:0}.nums p{color:var(--mute)}
 .final{background:var(--cobalt);color:#fff;text-align:center}
 .final h2{margin:0 auto;max-width:18ch}.final .lead{color:#DDE0FF;margin:18px auto 0}
 .final .btn{background:#fff;color:var(--cobalt);margin-top:30px}
 footer.site{padding:28px 0;color:var(--mute);font-size:.9rem;text-align:center}
-@media(max-width:860px){.hero .wrap,.cost{grid-template-columns:1fr}.qgrid,.tgrid{grid-template-columns:1fr}.q{border-right:0!important;border-bottom:1px solid var(--line)!important}.q:last-child{border-bottom:0!important}section{padding:64px 0}}
+@media(max-width:860px){.hero .wrap,.cost{grid-template-columns:1fr}.qgrid,.nums{grid-template-columns:1fr}.q{border-right:0!important;border-bottom:1px solid var(--line)!important}.q:last-child{border-bottom:0!important}section{padding:64px 0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -78,13 +73,14 @@ footer.site{padding:28px 0;color:var(--mute);font-size:.9rem;text-align:center}
 <a class="btn book" href="#">Book a 30-minute call</a>
 <p class="note">Free call. You leave with a creative test plan, whether or not we work together.</p>
 </div>
-<div class="phone"><video src="videos/dental-clinic.mp4" muted loop playsinline autoplay preload="metadata" poster="posters/dental.jpg" aria-label="Sample AI-generated ad"></video></div>
+<div class="phone"><video src="videos/fragrance.mp4" muted loop playsinline autoplay preload="metadata" poster="posters/fragrance.jpg" aria-label="Sample AI-generated ad"></video></div>
 </div></header>
 
 <section class="work" id="work"><div class="wrap">
-<h2>Ads we've already made. Every one is AI-generated.</h2>
-<p class="lead">Short, vertical, built for paid social. Different industries, different tones, same turnaround.</p>
+<h2>Ten ads. Ten industries. All AI-generated.</h2>
+<p class="lead">Vertical, built for paid social. Swipe through the range a first batch can cover.</p>
 <div class="reel" id="reel"></div>
+<p class="note" style="color:#AEB6C6">Concept ads made to show range, not client work. Brand names belong to their owners.</p>
 <div class="cta-row"><a class="btn book" href="#">Get yours made: book a call</a></div>
 </div></section>
 
@@ -105,12 +101,12 @@ footer.site{padding:28px 0;color:var(--mute);font-size:.9rem;text-align:center}
 <h2>One traditional ad costs more than forty of ours</h2>
 <p class="lead">You can't learn what works from a single expensive bet.</p>
 <div class="cost">
-<div class="panel"><h3>1 traditional ad</h3><div class="big" data-k="trad">$5,000+</div>
+<div class="panel"><h3>1 traditional ad</h3><div class="big" data-k="trad">$10,000+</div>
 <ul><li>Crew, talent, location and edit</li><li>2 to 6 weeks to deliver</li><li>One concept to test</li></ul></div>
-<div class="panel us"><h3>40 Ad Gen Labs creatives</h3><div class="big" data-k="ai">Fraction of that</div>
-<ul><li>No crew, no shoot, no reshoots</li><li>Days to first delivery</li><li>Forty angles, hooks and audiences to test</li></ul></div>
+<div class="panel us"><h3>40 Ad Gen Labs creatives</h3><div class="big" data-k="ai">$5,000</div>
+<ul><li>About $125 per creative, no shoot, no reshoots</li><li>Days to first delivery</li><li>Forty angles, hooks and audiences to test</li></ul></div>
 </div>
-<p class="note">Traditional figure is a typical low-end estimate for a produced video ad; actual costs vary.</p>
+<p class="note">Traditional figure is a typical estimate for one produced video ad; actual costs vary.</p>
 <p style="margin-top:28px"><a class="btn book" href="#">See your exact numbers on a call</a></p>
 </div></section>
 
@@ -132,10 +128,7 @@ footer.site{padding:28px 0;color:var(--mute);font-size:.9rem;text-align:center}
 <p style="margin-top:36px"><a class="btn book" href="#">That's us. Book a call</a></p>
 </div></section>
 
-<section id="proof" style="background:#fff"><div class="wrap">
-<h2>What founders say after the first batch</h2>
-<div class="tgrid" id="tgrid"></div>
-</div></section>
+<section id="proof" style="background:#fff"><div class="wrap"><h2>What one batch gets you</h2><div class="nums"><div><div class="big">40</div><p>distinct ad creatives, each with its own hook and angle</p></div><div><div class="big">$5,000</div><p>one price, about $125 per creative</p></div><div><div class="big">Days</div><p>to first delivery, not weeks</p></div></div><p style="margin-top:36px"><a class="btn book" href="#">Start your batch: book a call</a></p></div></section>
 
 <section class="final"><div class="wrap">
 <h2>Forty ads. One call to start.</h2>
@@ -148,14 +141,17 @@ footer.site{padding:28px 0;color:var(--mute);font-size:.9rem;text-align:center}
 const CALENDLY="https://calendly.com/adgenlabscreative/30min";
 // Add clips: drop the mp4 into /videos and add a line here.
 const CLIPS=[
- {src:"videos/dental-clinic.mp4",poster:"posters/dental.jpg",tag:"Healthcare"}
-];
-// Replace with real client quotes before launch.
-const TESTIMONIALS=[
- {q:"[Add a real client quote about speed to first batch]",n:"Founder name",r:"Role, Company"},
- {q:"[Add a real client quote about cost versus past agencies]",n:"Founder name",r:"Role, Company"},
- {q:"[Add a real client quote about results from testing]",n:"Founder name",r:"Role, Company"}
-];
+ {src:"videos/b2b-procurement.mp4",tag:"B2B software"},
+ {src:"videos/b2b-invoices.mp4",tag:"Fintech"},
+ {src:"videos/b2b-hiring.mp4",tag:"HR tech"},
+ {src:"videos/b2b-localization.mp4",tag:"AI tools"},
+ {src:"videos/b2b-offsite.mp4",tag:"SaaS"},
+ {src:"videos/dental-clinic.mp4",tag:"Healthcare"},
+ {src:"videos/pediatric-dental.mp4",tag:"Healthcare"},
+ {src:"videos/eye-care.mp4",tag:"Healthcare"},
+ {src:"videos/fragrance.mp4",tag:"Consumer"},
+ {src:"videos/haircare.mp4",tag:"Consumer"}
+].map(c=>({...c,poster:c.src.replace("videos/","posters/").replace(".mp4",".jpg")}));
 document.querySelectorAll('.book').forEach(a=>{a.href=CALENDLY;a.target="_blank";a.rel="noopener"});
 document.getElementById('yr').textContent=new Date().getFullYear();
 const reel=document.getElementById('reel');
@@ -164,7 +160,6 @@ CLIPS.forEach(c=>{const d=document.createElement('div');d.className='clip';
  d.querySelector('video').onerror=()=>d.remove();reel.appendChild(d)});
 const io=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;e.isIntersecting?v.play().catch(()=>{}):v.pause()}),{threshold:.4});
 reel.querySelectorAll('video').forEach(v=>io.observe(v));
-document.getElementById('tgrid').innerHTML=TESTIMONIALS.map(t=>`<div class="t"><blockquote>${t.q}</blockquote><footer><div class="av"></div><div><strong>${t.n}</strong><small>${t.r}</small></div></footer></div>`).join('');
 </script>
 </body>
 </html>
