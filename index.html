@@ -34,6 +34,7 @@ nav .btn{padding:10px 18px;font-size:.95rem}
 .work .lead{color:#AEB6C6}
 .reel{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 24px 20px;margin:40px -24px 0}
 .clip{flex:0 0 220px;scroll-snap-align:start;aspect-ratio:9/16;border-radius:14px;overflow:hidden;position:relative;background:#1B2232}
+.clip.wide{flex:0 0 auto;height:391px;width:auto;aspect-ratio:16/9}
 .clip video{width:100%;height:100%;object-fit:cover;display:block}
 .clip span{position:absolute;left:12px;bottom:12px;background:rgba(15,20,32,.75);padding:4px 10px;border-radius:99px;font-size:.8rem}
 .work .cta-row{margin-top:40px}
@@ -149,13 +150,13 @@ const CLIPS=[
  {src:"videos/dental-clinic.mp4",tag:"Healthcare"},
  {src:"videos/pediatric-dental.mp4",tag:"Healthcare"},
  {src:"videos/eye-care.mp4",tag:"Healthcare"},
- {src:"videos/fragrance.mp4",tag:"Consumer"},
+ {src:"videos/omi-device.mp4",tag:"Consumer tech",wide:true},
  {src:"videos/haircare.mp4",tag:"Consumer"}
 ].map(c=>({...c,poster:c.src.replace("videos/","posters/").replace(".mp4",".jpg")}));
 document.querySelectorAll('.book').forEach(a=>{a.href=CALENDLY;a.target="_blank";a.rel="noopener"});
 document.getElementById('yr').textContent=new Date().getFullYear();
 const reel=document.getElementById('reel');
-CLIPS.forEach(c=>{const d=document.createElement('div');d.className='clip';
+CLIPS.forEach(c=>{const d=document.createElement('div');d.className='clip'+(c.wide?' wide':'');
  d.innerHTML=`<video src="${c.src}" poster="${c.poster||''}" muted loop playsinline preload="metadata"></video><span>${c.tag}</span>`;
  d.querySelector('video').onerror=()=>d.remove();reel.appendChild(d)});
 const io=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;e.isIntersecting?v.play().catch(()=>{}):v.pause()}),{threshold:.4});
